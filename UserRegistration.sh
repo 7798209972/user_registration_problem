@@ -24,7 +24,20 @@ then
 
 	if [[ $last_name =~ $regex_name ]]
 	then
-		echo "Success.."
+		#Getting Email
+
+		read -p "Enter Email : " email;
+		#Regex for Email
+		regex_mail="^[a-zA-z][a-zA-Z0-9+$#!^&*)(_+=\-?.',|\/]*[@]{1}[a-z.]{3,}[.]{1}[a-z]{2,}";
+
+		#Checking Email
+
+		if [[ $email =~ $regex_mail ]]
+		then
+			echo "Success";
+		else
+			echo "Please Enter Valid Email Address";
+		fi
 	else
 		echo "Error..! Last name should be start with Cap and has minimum 3 characters";
 	fi
