@@ -48,10 +48,12 @@ then
 				#Rule 1 :Regex for Password minimum 8 Characters
 				regex_pass1="^[1-9a-zA-z+$#@!^&*)(_+=-?.',|\/]{8,}";
 				#Rule 2 :Regex for Password atleast 1 Upper Case
-				regex_pass2="^[A-Z]{1}[a-zA-z]*[+$#@!^&*)(_+=\-?.',|\/]{1}[0-9]{1}[a-zA-z]*$";
+				regex_pass2="^[A-Z]{1}[a-zA-z]*[a-zA-z]*$";
+				#Rule 3 :Regex for Password atleast one number
+				regex_pass3="^[a-zA-z]*[0-9]{1}[a-zA-z]*$";
 				#checking Password
 
-				if [[ $password =~ $regex_pass2 ]]
+				if [[ $password =~ $regex_pass3 ]]
 				then
 					echo "Success ";
 				else
