@@ -31,7 +31,7 @@ then
 		#Regex for Email
 		regex_mail="^[a-zA-z][a-zA-Z0-9+$#!^&*)(_+=\-?.',|\/]*[@]{1}[a-z.]{3,}[.]{1}[a-z]{2,}";
 
-		#Checking Email
+		#Clearing all Email Samples
 
 		if [[ $email =~ $regex_mail ]]
 		then
