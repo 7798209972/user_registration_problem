@@ -34,7 +34,17 @@ then
 
 		if [[ $email =~ $regex_mail ]]
 		then
-			echo "Success";
+			#Getting Mobile Number
+			read -p "Enter Mobile No : "; mobile_no;
+			#Regex for Mobile Number
+			regex_mobile="^([+]{1}[9]{1}[1]|[0]{1})?[6-9]{1}[0-9]{9}$";
+
+			if [[ $mobile_no =~ $regex_mobile ]]
+			then
+				echo "Success";
+			else
+				echo "Please Enter Valid Mobile Number ";
+			fi
 		else
 			echo "Please Enter Valid Email Address";
 		fi
