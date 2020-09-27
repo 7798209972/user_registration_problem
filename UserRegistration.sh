@@ -27,6 +27,7 @@ then
 		#Getting Email
 
 		read -p "Enter Email : " email;
+
 		#Regex for Email
 		regex_mail="^[a-zA-z][a-zA-Z0-9+$#!^&*)(_+=\-?.',|\/]*[@]{1}[a-z.]{3,}[.]{1}[a-z]{2,}";
 
@@ -41,7 +42,19 @@ then
 
 			if [[ $mobile_no =~ $regex_mobile ]]
 			then
-				echo "Success";
+				#Getting Password
+				read -p "Enter Password : " password;
+
+				#Rule 1 :egex for Password minimum 8 Characters
+				regex_pass1="^[1-9a-zA-z+$#@!^&*)(_+=-?.',|\/]{8,}";
+				#checking Password
+
+				if [[ $password =~ $regex_pass1 ]]
+				then
+					echo "Success ";
+				else
+					echo "Invalid Password... Please enter minimum 8 characters ";
+				fi
 			else
 				echo "Please Enter Valid Mobile Number ";
 			fi
