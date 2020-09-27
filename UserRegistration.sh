@@ -17,7 +17,17 @@ regex_name="^[A-Z]{1}[a-z]{2,}$";
 
 if [[ $first_name =~ $regex_name ]]
 then
-	echo "Success";
+	#Getting Last Name
+
+	read -p "Enter Last Name : " last_name;
+	#Cheking Last Name
+
+	if [[ $last_name =~ $regex_name ]]
+	then
+		echo "Success.."
+	else
+		echo "Error..! Last name should be start with Cap and has minimum 3 characters";
+	fi
 else
 	echo "Error..! First name should be start with Cap and has minimum 3 characters";
 fi
